@@ -1,0 +1,9 @@
+.toggle_theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  left: 90%;
+  top: 5%;
+}

@@ -9,4 +9,3 @@ RUN pnpm install --filter ./backend...
 COPY . .
 WORKDIR /app/backend
 EXPOSE 1026
-CMD ["pnpm", "run", "dev"]

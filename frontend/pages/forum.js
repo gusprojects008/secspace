@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import styles from '../styles/forum.module.css';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -46,7 +46,7 @@ export default function Forum() {
   
     fetchComments();
   
-    intervalId = setInterval(fetchComments, 500);
+    intervalId = setInterval(fetchComments, 1000);
   
     return () => clearInterval(intervalId);
   }, []);
@@ -153,11 +153,27 @@ export default function Forum() {
               {editingId === c.id ? (
                 <>
                   <textarea
+                    className={styles.textarea}
                     value={editingContent}
                     onChange={e => setEditingContent(e.target.value)}
+                    placeholder="Update your comment..."
                   />
-                  <button onClick={() => handleUpdate(c.id)}>Save</button>
-                  <button onClick={() => setEditingId(null)}>Cancel</button>
+                
+                  <div className={styles.actions}>
+                    <button
+                      data-action="save"
+                      onClick={() => handleUpdate(c.id)}
+                    >
+                      Save
+                    </button>
+                
+                    <button
+                      data-action="cancel"
+                      onClick={() => setEditingId(null)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
                 </>
               ) : (
                 <>
@@ -166,6 +182,7 @@ export default function Forum() {
                   {c.user_id === currentUserId && (
                     <div className={styles.actions}>
                       <button
+                        data-action="edit"
                         onClick={() => {
                           setEditingId(c.id);
                           setEditingContent(c.content);
@@ -173,8 +190,11 @@ export default function Forum() {
                       >
                         Edit
                       </button>
-          
-                      <button onClick={() => handleDelete(c.id)}>
+                    
+                      <button
+                        data-action="delete"
+                        onClick={() => handleDelete(c.id)}
+                      >
                         Delete
                       </button>
                     </div>

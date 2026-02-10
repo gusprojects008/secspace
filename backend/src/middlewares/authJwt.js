@@ -8,12 +8,12 @@ export default async function authJwt(req, res, next) {
 
   if (!auth) {
     return http.response(res, 'UNAUTHORIZED', errors.TOKEN_INVALID); 
-  }
+  };
 
   try {
-    const payload = jwt.verify(auth, process.env.JWT_SECRET)
-    req.user = payload
-    return next()
+    const payload = jwt.verify(auth, process.env.JWT_SECRET);
+    req.user = payload;
+    return next();
   } catch {
     return http.response(res, 'FORBIDDEN', errors.TOKEN_INVALID); 
   }

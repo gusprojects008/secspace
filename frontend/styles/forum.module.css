@@ -5,7 +5,7 @@
 .content {
   max-width: 900px;
   margin: 0 auto;
-  color: var(--text-muted);
+  color: var(--text-main);
 }
 
 .title {
@@ -94,6 +94,48 @@
 .loading {
   background: rgba(0, 112, 243, 0.1);
   color: #0070f3;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.actions button[data-action="save"] {
+  border-color: green;
+  color: green;
+}
+
+.actions button[data-action="save"]:hover {
+  background: green;
+  color: white;
+}
+
+.actions button[data-action="cancel"] {
+  border-color: red;
+  color: red;
+}
+
+.actions button[data-action="cancel"]:hover {
+  background: gray;
+  color: white;
+}
+
+.actions button[data-action="delete"] {
+  border-color: red;
+  color: red;
+}
+
+.actions button[data-action="delete"]:hover {
+  background: red;
+  color: white;
 }
 
 @media (min-width: 768px) {

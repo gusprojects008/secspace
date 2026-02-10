@@ -73,7 +73,7 @@ parts of the real DOM. setEmail can receive a callback that allows calculating t
   
       setTimeout(() => {
         window.location.href = '/forum';
-      }, 700);
+      }, 500);
   
     } catch {
       setStatus('error');

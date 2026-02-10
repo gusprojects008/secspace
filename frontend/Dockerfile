@@ -8,4 +8,3 @@ RUN pnpm install --filter ./frontend...
 COPY . .
 WORKDIR /app/frontend
 EXPOSE 1027
-CMD ["pnpm", "run", "dev"]

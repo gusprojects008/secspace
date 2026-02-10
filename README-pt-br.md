@@ -97,5 +97,3 @@ sudo docker-compose up --build
 ## Observações finais
 
 Este projeto prioriza clareza arquitetural e entendimento dos fluxos internos da aplicação, mesmo que isso resulte em soluções mais verbosas do que o necessário para um projeto pequeno. A ideia é estudar com consciência, não apenas “fazer funcionar”.
-
-```

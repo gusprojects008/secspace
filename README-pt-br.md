@@ -84,11 +84,9 @@ GOOGLE_CLIENT_SECRET=SenhaSuperForte
 
 Esses links devem ser adicionados aos campos de URLs autorizadas para permitir que a tela de OAuth2 do Google seja exibida corretamente após o redirecionamento.
 
-Imagem de referência:
+### Configuração no Google Cloud Console
 
-```text
-./docs/images/console-api-google-configuracao.png
-```
+![Configuração da API do Google](./docs/images/console-api-google-configuracao.png)
 
 6. Suba a aplicação com Docker Compose:
 
